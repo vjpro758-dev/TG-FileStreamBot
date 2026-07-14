@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
      workflow_dispatch:
 jobs:
-  build-and-test:
+  run-bot:
        runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
