@@ -13,7 +13,8 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install pyrogram tgcrypto aiohttp aiofiles
-      - run: python3 -m WebStreamer
+      - name: Start Server
+        run: python3 -m WebStreamer
         env:
           API_ID: ${{ vars.API_ID }}
           API_HASH: ${{ vars.API_HASH }}
