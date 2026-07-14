@@ -15,8 +15,8 @@ jobs:
       - run: pip install pyrogram tgcrypto aiohttp aiofiles TgFileStreamBot
       - run: python3 -m WebStreamer
         env:
-          API_ID: ${{ secrets.API_ID }}
-          API_HASH: ${{ secrets.API_HASH }}
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          BIN_CHANNEL: ${{ secrets.BIN_CHANNEL }}
-          PORT: ${{ secrets.PORT }}
+          API_ID: ${{ vars.API_ID }}
+          API_HASH: ${{ vars.API_HASH }}
+          BOT_TOKEN: ${{ vars.BOT_TOKEN }}
+          BIN_CHANNEL: ${{ vars.BIN_CHANNEL }}
+          PORT: ${{ vars.PORT }}
