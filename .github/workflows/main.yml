@@ -2,25 +2,29 @@ name: Run Stream Bot
 on:
   push:
     branches: [ "main" ]
-     workflow_dispatch:
+  workflow_dispatch:
+
 jobs:
   run-bot:
-     runs-on: ubuntu-latest
-     steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-       - name: Set up Python
+
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-           python-version: '3.10'
-       - name: Install Dependencies
+          python-version: '3.10'
+
+      - name: Install Dependencies
         run: |
-          pip install -r requirements  
-       - name: Run Telegram Bot
-       env:
-         API-ID: 30585502
-         API_HASH: 1f40f4d9afb9d7acd5830d52cf72f17b
-         BOT_TOKEN: 8915960492:AAEEqbihnEGlGxb4HXbonV5sQsNvsMYFnFE
-         BIN_CHANNEL: -1003709520419
-         PORT: 8080
-         run: python3 -m WebStreamer
+          pip install -r requirements.txt
+
+      - name: Run Telegram Bot
+        env:
+          API_ID: 30585502
+          API_HASH: 1f40f4d9afb9d7acd5830d52cf72f17b
+          BOT_TOKEN: 8015960492:AALEqbihnEGIGxb4HXbonV5sOsNvsMYinFE
+          BIN_CHANNEL: -1002199528419
+          PORT: 8080
+        run: python3 -m WebStreamer
